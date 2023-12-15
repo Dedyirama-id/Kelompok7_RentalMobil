@@ -13,6 +13,7 @@ struct DataMobil
 struct FormSewa
 {
     int kode;
+    string plat;
     string nama;
     int nik;
     string alamat;
@@ -98,7 +99,7 @@ void writeData(FormSewa &dataSewa)
     outFile.open("history.txt", ios::app);
     if (outFile.is_open())
     {
-        outFile << dataSewa.nama << "\t" << dataSewa.nik << "\t"<< dataSewa.alamat << "\t" << dataSewa.noTelp << "\t" << dataSewa.kode << "\t" << arrDataMobil[dataSewa.kode - 1].jenis << "\t" << dataSewa.durasi << "\t" << subTotal << "\t" << diskon << "\t" << total << endl;
+        outFile << dataSewa.nama << "\t" << dataSewa.nik << "\t" << dataSewa.alamat << "\t" << dataSewa.noTelp << "\t" << dataSewa.kode << "\t" << arrDataMobil[dataSewa.kode - 1].jenis << "\t" << dataSewa.plat << "\t" << dataSewa.durasi << "\t" << subTotal << "\t" << diskon << "\t" << total << endl;
         outFile.close();
     }
     else
@@ -121,7 +122,8 @@ void invoice(FormSewa &dataSewa)
         cout << "==================================================" << endl;
         cout << "Nama penyewa\t: " << dataSewa.nama << endl;
         cout << "Kode mobil\t: " << dataSewa.kode << endl;
-        cout << "jenis mobil\t: " << arrDataMobil[dataSewa.kode - 1].jenis << endl;
+        cout << "Jenis mobil\t: " << arrDataMobil[dataSewa.kode - 1].jenis << endl;
+        cout << "Nomor Plat\t: " << dataSewa.plat << endl;
         cout << "Harga sewa\t: Rp " << arrDataMobil[dataSewa.kode - 1].harga << endl;
         cout << "Durasi sewa\t: " << dataSewa.durasi << " Hari" << endl;
         cout << "Subtotal\t: Rp " << subTotal << endl;
@@ -151,6 +153,10 @@ void sewa(int &pilihan)
 {
     FormSewa dataSewa;
     dataSewa.kode = pilihan;
+    cout << "Masukkan plat nomor kendaraan: ";
+    cin >> dataSewa.plat;
+    for (char &c : dataSewa.plat) c = toupper(c);
+
     cout << "Masukkan nama penyewa: ";
     cin.ignore();
     getline(cin, dataSewa.nama);
