@@ -1,0 +1,3 @@
+Dedy Irama	351511123	Jl. Mawar No. 123, RT 05/RW 02, Kel. Bunga Indah, Kec. Kota Bahagia, 12345	6281123456789	6	Mobil Elf	W1234XX	12	8400000	0	8400000
+Elsa Mutiara	351511124	Jl. Merdeka No. 123, Kelurahan Cipta Sejahtera, Kecamatan Megapolitan, Kota Utama	6281122334455	2	Honda Jazz	W1111XY	15	5250000	1575000	3675000
+Rafi	351511125	Jalan Merdeka No. 123, Kelurahan Cipta Jaya, Kecamatan Citra Makmur, Kota Sejahtera	6281987654321	10	Bus Besar	W1010AB	21	21000000	6300000	14700000
